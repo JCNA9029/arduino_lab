@@ -4,7 +4,9 @@ This activity demonstrates the use of arrays and for-loops to manage multiple ou
 
 **Objective**: To create a "chase" effect where LEDs turn on one by one and then turn off in the same order.
 
-**Hardware Used**: * Arduino Uno R4 WiFi
+**Hardware Used**: 
+
+Arduino Uno R4 WiFi
 
 5 LEDs
 
