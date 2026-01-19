@@ -1,20 +1,25 @@
 # Midterm Laboratory Exam
 
-This repository contains our submission for Midterm Laboratory Exam
+This project implements a dual-mode light monitoring system. It allows the user to switch between an Automatic Mode—which uses fixed environmental presets—and a Manual Mode—where the user can calibrate sensitivity thresholds in real-time through the Serial Monitor.
 
-## Table of Contents
-1. [Files Description](#files)
-2. [Generative AI](#ai)
+**Objective**: To create a flexible light-sensing interface that supports remote configuration and real-time adjustments.
 
-## AI
-1. [Prompts used to transact with your selected Generative AI](https://docs.google.com/document/d/1DM2Y4li1f3TO6f3GV8G6GQgeIlcYUiep8Qa7PcUrZw0/edit?usp=sharing)
-2. Model used to generate the content: ChatGPT5
-3. [Transaction ID or the link of the conversation](https://chatgpt.com/c/690eca7d-ea0c-8325-a761-d5032e31c679)
+**Hardware Used**:
 
-## Grades
-- **Leader:**  John Harold R. Magma
-### Members 
-- Jemuel Chris N. Ambong
-- Keren G. Dellosa
-- Johnny Sagal De Asis
-- Zeus Padilla
+Arduino Uno R4 WiFi.
+
+Photoresistor (LDR).
+
+3 LEDs (Green, Yellow, Red).
+
+**Key Concepts**:
+
+**State Machine Logic**: Uses a boolean isAutomatic to shift the entire program's behavior between preset and user-defined logic.
+
+**Advanced Serial Command Parsing**: Implements complex string commands like SET LOW XX and MODE AUTO, using startsWith() and substring() to extract numeric parameters from user input.
+
+**Data Normalization**: Maps raw 10-bit analog readings (0–1023) into a more readable 0–100% scale for consistent threshold comparison.
+
+**Input Validation**: Uses the constrain() function to ensure that manual thresholds remain within logical bounds (e.g., the LOW threshold cannot exceed the HIGH threshold).
+
+**Environmental Classification**: Provides "Cloudy" vs. "Clear" status updates based on light intensity levels when in automatic mode.
