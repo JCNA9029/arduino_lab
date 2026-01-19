@@ -27,8 +27,3 @@ This repository contains our submission for the Laboratory Activities in COSC 11
 1. Prompts used to transact with your selected Generative AI
 2. Model used to generate the content
 3. Transaction ID or the link of the conversation
-
-### Members
-- John Harold R. Magma
-- Keren G. Dellosa
-- Jemuel Chris N. Ambong
