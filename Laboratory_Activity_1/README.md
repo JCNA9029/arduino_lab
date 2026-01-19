@@ -1,25 +1,19 @@
 # Laboratory Activity#1: Working with Digital Signals
 
-This repository contains our submission for Laboratory Activity#1: Working with Digital Signals
+This activity demonstrates the use of arrays and for-loops to manage multiple output components efficiently. Instead of defining each pin individually, the program iterates through an integer array to initialize and toggle five LEDs in sequence.
 
-## Table of Contents
-1. [Files Description](#files)
-2. [Generative AI](#ai)
-3. [Grades](#grades)
+Objective: To create a "chase" effect where LEDs turn on one by one and then turn off in the same order.
 
-## Files
-1. Arduino Code Sketch File (*.ino)
-2. Breadboard Diagram
-3. [Tinkercad Diagram and Simulation](https://www.tinkercad.com/things/9vwfy596pfp-fantabulous-jaban)
-4. [Video Simulating the Breadboard and its corresponding Circuit Diagram on TinkerCad](https://drive.google.com/file/d/1P-qdPZ5ArVLBAV4516N4TUivbEDj9anx/view?usp=sharing)
+Hardware Used: * Arduino Uno R4 WiFi
 
-## AI
-1. [Prompts used to transact with your selected Generative AI](https://docs.google.com/document/d/1YUGxfiXmXEUhCk1DWNWxE9lhMgbccCB0d_DhGxzq_O8/edit?usp=sharing)
-2. Model used to generate the content: ChatGPT 5
-3. [Transaction ID or the link of the conversation](https://chatgpt.com/share/68cadd1a-e038-8005-b5a5-95c230d33d28) 
+5 LEDs
 
-## Grades
-- **Leader:** John Harold R. Magma
-### Members 
-- Keren G. Dellosa - 100
-- Jemuel Chris N. Ambong - 99
+Resistors and Breadboard
+
+Key Concepts:
+
+Arrays: Used to store pin numbers {12, 11, 10, 9, 8} for cleaner code management.
+
+Iteration: A for loop is utilized in the setup() function to set all pins to OUTPUT mode.
+
+Timing: The delay(1000) function creates a 1-second interval between each LED state change.
