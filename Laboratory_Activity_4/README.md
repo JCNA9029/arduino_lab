@@ -1,26 +1,25 @@
 # Laboratory Activity #4: Arduino Serial Connection
 
-This repository contains our submission for Laboratory Activity #4: Arduino Serial Connection
+This activity demonstrates a more interactive approach to microcontroller programming by allowing a user to communicate with the Arduino via the Serial Monitor. It also introduces the millis() function to handle "multi-tasking" without freezing the program.
 
-## Table of Contents
-1. [Files Description](#files)
-2. [Generative AI](#ai)
-3. [Grades](#grades)
+**Objective**: To create a system where a light-triggered alert can be manually overridden and stopped by typing a command into the computer.
 
-## Files
-1. Arduino Code Sketch File (*.ino)
-2. Breadboard Diagram
-3. [Tinkercad Diagram](https://www.tinkercad.com/things/6tsXx8ZeXtL-powerful-fulffy-snaget?sharecode=r11ciAH6uxm6B7JmOuzNlhSjJe3grTszWZXqPOHmAhY)
-4. [Video Simulating the Breadboard and its corresponding Circuit Diagram on TinkerCad](https://drive.google.com/file/d/1euVxsIAQha4LLKluGj8ADltfiV_2NsJ5/view?usp=sharing)
+**Hardware Used**:
 
-## AI
-1. [Prompts used to transact with your selected Generative AI](https://docs.google.com/document/d/1ebrNof37DO8eTNEh-HSsiVi1JqfUENP2s7Kp1unPQ3Y/edit?usp=sharing)
-2. Model used to generate the content: ChatGPT 5
-3. [Transaction ID or the link of the conversation](https://chatgpt.com/share/68fbfc06-dd60-800b-afa7-fb2d70dc11c3)
+Arduino Uno R4 WiFi
 
-## Grades
-- **Leader:** John Harold R. Magma
-### Members 
-- Jemuel Chris N. Ambong - 99
-- Keren G. Dellosa - 100
+Photoresistor (LDR) 
+
+LED 
+
+**Key Concepts**:
+
+**Serial Communication**: Uses Serial.available() and Serial.readStringUntil() to listen for specific text commands like "stop" from the user.
+
+**Non-blocking Timing**: Instead of using delay(), which pauses the entire processor, this code uses millis() to track time intervals for blinking the LED. This allows the sensor to keep reading data even while the LED is flashing.
+
+**String Manipulation**: Implements .trim() and .toLowerCase() to ensure user input is parsed correctly regardless of extra spaces or capitalization.
+
+**Conditional State Management**: Uses a boolean flag (blinkingActive) to toggle the system's behavior based on both sensor input and serial commands.
+
 
