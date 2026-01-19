@@ -1,30 +1,27 @@
 # Laboratory Activity#5: Receiving Serial Connection using Arduino from Python
 
-This repository contains our submission for Laboratory Activity#5: Receiving Serial Connection using Arduino from Python
+This project showcases the integration of Python and Arduino to create a desktop-controlled hardware interface. It utilizes a modular approach by separating hardware logic into a C++ header file and providing a user-friendly menu through a Python script.
 
-## Table of Contents
-1. [Files Description](#files)
-2. [Generative AI](#ai)
-3. [Grades](#grades)
+**Objective**: To build a system where a user can control multiple LEDs (Red, Green, Blue) from their computer keyboard using a custom Python interface.
 
-## Files
-1. Arduino Code Sketch File (*.ino)
-2. [Breadboard Diagram](https://drive.google.com/file/d/1WRlwpdoSsAlgfg8KQhOZGyI0N4cBz1ZB/view?usp=sharing)
-3. [Tinkercad Diagram](https://drive.google.com/file/d/1wjO8Qyvll-78-F_ShEHeHiPqQ6elUnjd/view?usp=sharing)
-4. [Video Simulating the Breadboard and its corresponding Circuit Diagram on TinkerCad](https://drive.google.com/file/d/15RCLJFpSOGnHZq50F7RV-LdF9hiP91E_/view?usp=sharing)
+**Hardware Used**:
 
-## AI
-1. [Prompts used to transact with your selected Generative AI](https://docs.google.com/document/d/1Fe5OqBTM9iATZMIurfX4jmZpX0Domhsl6qaz1dQoqu0/edit?usp=sharing)
-2. Model used to generate the content: Gemini 3 Pro
-3. [Transaction ID or the link of the conversation](https://gemini.google.com/share/4a584b09de8c)
+Arduino Uno R4 WiFi
 
-## Grades
-- **Leader:** John Harold R. Magma
-### Members 
-- Jemuel Chris N. Ambong
-- Keren G. Dellosa
-- Jamil S. Mariano
-- Rachelle Yazmhine C. Mendez
-- Betina B. Arrojo
-- Audric P. Pascual
+Red, Green, and Blue LEDs 
+
+Resistors and Breadboard
+
+**Key Concepts**:
+
+**Modular Programming** (.h files): Hardware-specific functions like initLEDs() and processInput() are encapsulated in a header file to keep the main .ino file clean and readable.
+
+**Python pyserial Library**: Used to establish a connection between the PC and the Arduino over a COM port.
+
+**Switch-Case Logic**: Efficiently handles multiple single-character commands ('R', 'G', 'B', 'A', 'O') to toggle LED states.
+
+**Robust Serial Handling**: The Arduino code is designed to ignore newline (\n) and carriage return (\r) characters, ensuring command stability.
+
+**User Experience** (UX): The Python script features a "Clear Screen" function and a visual menu to provide a professional CLI experience.
+
 
