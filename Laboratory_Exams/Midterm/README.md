@@ -1,6 +1,6 @@
 # Midterm Laboratory Exam
 
-This project implements a dual-mode light monitoring system. It allows the user to switch between an Automatic Mode—which uses fixed environmental presets—and a Manual Mode—where the user can calibrate sensitivity thresholds in real-time through the Serial Monitor.
+This project implements a dual-mode light monitoring system. It allows the user to switch between an Automatic Mode, which uses fixed environmental presets, and a Manual Mode, where the user can calibrate sensitivity thresholds in real-time through the Serial Monitor.
 
 **Objective**: To create a flexible light-sensing interface that supports remote configuration and real-time adjustments.
 
@@ -23,3 +23,4 @@ Photoresistor (LDR).
 **Input Validation**: Uses the constrain() function to ensure that manual thresholds remain within logical bounds (e.g., the LOW threshold cannot exceed the HIGH threshold).
 
 **Environmental Classification**: Provides "Cloudy" vs. "Clear" status updates based on light intensity levels when in automatic mode.
+
