@@ -9,7 +9,9 @@ This activity involves the creation of a simulated safety system that monitors e
 Arduino Uno R4 WiFi 
 
 Thermistor (NTC) 
+
 Photoresistor (LDR) 
+
 Buzzer/LED for Alert 
 
 **Key Concepts**:
@@ -21,6 +23,7 @@ Buzzer/LED for Alert
 **Modular Programming**: Uses dedicated functions like readTemperatureC(), readLDRValue(), and triggerAlert() to keep the loop() clean and organized.
 
 **Dynamic Alert Frequency**: The alarm's pulse speed (delay) changes based on the severity of the detected temperature, providing an audible cue of the danger level.
+
 
 
 
