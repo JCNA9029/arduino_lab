@@ -1,31 +1,25 @@
 # Laboratory Activity #7: Controllling Arduino using FastAPI
 
-This repository contains our submission for Laboratory Activity#6: Bidirectional Control using Arduino and Python
+This project transforms the Arduino into an IoT-capable device. It uses a FastAPI backend to expose hardware controls as web endpoints, allowing the LEDs to be toggled via HTTP requests (e.g., through a web browser or Postman).
 
-## Table of Contents
-1. [Files Description](#files)
-2. [Generative AI](#ai)
-3. [Grades](#grades)
+**Objective**: To build a web-serviced control system where hardware states are managed via FastAPI while maintaining manual physical control through buttons.
 
-## Files
-1. Arduino Code Sketch File (*.ino)
-2. [Breadboard Diagram](https://drive.google.com/file/d/1Q3zFuCz7QvvBWlbJawcrUMuBVxw60YCQ/view?usp=sharing)
-3. [Tinkercad Diagram](https://drive.google.com/file/d/1tojCrI2181WEdm6Mzi5x53-089rF7d_4/view?usp=sharing)
-4. [Video Simulating the Breadboard and its corresponding Circuit Diagram on TinkerCad](https://drive.google.com/file/d/1DQ9WWUWmo1qZMCe8QqU39jhmn8ZmGocY/view?usp=sharing)
+**Hardware Used**:
 
-## AI
-1. [Prompts used to transact with your selected Generative AI](https://docs.google.com/document/d/1MN57WclmEDDDeA7Bta_moRSLxrkAH41zfC28ILxsMrw/edit?tab=t.0)
-2. Model used to generate the content: Gemini 3 Pro
-3. [Transaction ID or the link of the conversation](https://gemini.google.com/share/3e477ec98a37)
+Arduino Uno.
 
-## Grades
-- **Leader:**  Betina B. Arrojo
-### Members 
-- Jemuel Chris N. Ambong
-- Betina B. Arrojo
-- Keren G. Dellosa
-- John Harold R. Magma
-- Jamil S. Mariano
-- Rachelle Yazmhine C. Mendez
+3 LEDs (Red, Green, Blue).
 
-- Audric P. Pascual
+3 Push Buttons.
+
+**Key Concepts**:
+
+**FastAPI Backend**: Implements GET routes like /led/on, /led/off, and dynamic paths like /led/{color} to handle hardware commands.
+
+**Multi-threading**: Uses the Python threading library to run a background serial reader, ensuring the API stays responsive while simultaneously listening for button press notifications from the Arduino.
+
+**Serial Protocol**: The Arduino logic is designed to parse single-character commands ('1', '2', '3', 'o', 'f') and use tolower() to ensure case-insensitive communication.
+
+**Hardware Interrupt Simulation**: The Arduino code uses while(digitalRead(btn) == HIGH); loops to act as a "busy-wait," ensuring a single button press only triggers a state change once.
+
+**Error Handling**: The Python script includes a try-except block to manage connection states and raises HTTPException (Status 500) if the API is called without an active Arduino connection.
