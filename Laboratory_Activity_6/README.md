@@ -1,29 +1,28 @@
 # Laboratory Activity#6: Bidirectional Control using Arduino and Python
 
-This repository contains our submission for Laboratory Activity#6: Bidirectional Control using Arduino and Python
+This project demonstrates a sophisticated full-duplex communication system between Python and Arduino. It implements a feedback loop where physical hardware inputs (buttons) trigger software logic in Python, which subsequently controls hardware outputs (LEDs).
 
-## Table of Contents
-1. [Files Description](#files)
-2. [Generative AI](#ai)
-3. [Grades](#grades)
+**Objective**: To create a synchronized system where pressing a physical button sends a specific character to a Python script, which then "echoes" a corresponding command back to the Arduino to toggle an LED.
 
-## Files
-1. Arduino Code Sketch File (*.ino)
-2. [Breadboard Diagram](https://drive.google.com/file/d/1KUmylDS3eLIGeaacaXLmm_PzmPTtbrf9/view?usp=sharing)
-3. [Tinkercad Diagram]()
-4. [Video Simulating the Breadboard and its corresponding Circuit Diagram on TinkerCad]()
+**Hardware Used**:
 
-## AI
-1. [Prompts used to transact with your selected Generative AI]()
-2. Model used to generate the content: Gemini 3 Pro
-3. [Transaction ID or the link of the conversation](https://gemini.google.com/share/2d25879716f8)
+Arduino Uno R4 WiFi 
 
-## Grades
-- **Leader:**  Rachelle Yazmhine C. Mendez
-### Members 
-- Jemuel Chris N. Ambong
-- Betina B. Arrojo
-- Keren G. Dellosa
-- John Harold R. Magma
-- Jamil S. Mariano
-- Audric P. Pascual
+3 LEDs (Red, Green, Blue) 
+
+3 Push Buttons 
+
+Internal Pull-up Resistors 
+
+**Key Concepts**:
+
+**Software Debouncing**: Implements a debounceDelay of 50ms to filter out mechanical noise from the buttons, ensuring each press is only registered once.
+
+**Input Pull-up Logic**: Utilizes INPUT_PULLUP to simplify the circuit, allowing buttons to be connected directly to GND without external resistors.
+
+**Serial Buffer Management**: Uses Serial.setTimeout(10) and input.trim() to ensure rapid, clean reading of incoming serial strings without blocking the main loop.
+
+**Strict Protocol Validation**: The Arduino code performs a "length check" to only process commands that are exactly one character long, preventing errors from malformed data.
+
+**Python Integration**: The Python script monitors ser.in_waiting to asynchronously read button signals ('R', 'G', 'B') and translate them into numeric commands ('1', '2', '3') for the Arduino.
+
